@@ -4,28 +4,29 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".zadanie">
+
+
 
     <LinearLayout
         android:id="@+id/verticalLayout"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintBottom_toTopOf="@+id/editTextDescription"
+        app:layout_constraintBottom_toTopOf="@+id/DescriptionView"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
 
         app:layout_constraintTop_toTopOf="parent">
 
 
-        <EditText
-            android:id="@+id/editTextTitle"
+        <TextView
+            android:id="@+id/TitleView"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:layout_marginTop="0dp"
             android:layout_weight=".9"
             android:ems="10"
-            android:inputType="textPersonName"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -70,18 +71,17 @@
 
 
 
-    <EditText
-        android:id="@+id/editTextDescription"
+    <TextView
+        android:id="@+id/DescriptionView"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:ems="10"
-        android:inputType="textMultiLine"
         android:nextFocusLeft="@id/buttonContinue"
         android:nextFocusRight="@id/buttonContinue"
         android:nextFocusUp="@id/buttonContinue"
         android:nextFocusDown="@id/buttonContinue"
         android:nextFocusForward="@id/buttonContinue"
-        app:layout_constraintBottom_toTopOf="@+id/buttonContinue"
+        app:layout_constraintBottom_toTopOf="@+id/buttonZapiszZadanie"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -90,14 +90,11 @@
         tools:text="@tools:sample/lorem/random" />
 
     <Button
-        android:id="@+id/buttonContinue"
+        android:id="@+id/buttonZapiszZadanie"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/dodaj"
+        android:text="@string/zapisz_zadanie"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/verticalLayout" />
-
-
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>
