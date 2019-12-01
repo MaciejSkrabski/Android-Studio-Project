@@ -19,7 +19,9 @@ class MainActivity : AppCompatActivity() {
         listaZadan.layoutManager = LinearLayoutManager(this)
 
         //połączenie między bazą danych a widokiem
-        listaZadan.adapter
+        listaZadan.adapter = Adapter()
+
+
 
     }
 
