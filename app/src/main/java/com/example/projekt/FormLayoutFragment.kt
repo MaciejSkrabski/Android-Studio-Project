@@ -8,6 +8,8 @@ import androidx.fragment.app.Fragment
 
 class FormLayoutFragment : Fragment()
 {
+    val db = DataBaseHelper(this.context!!)
+
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -15,4 +17,6 @@ class FormLayoutFragment : Fragment()
     ): View? {
         return inflater.inflate(R.layout.formlayout, container, false)
     }
+
+
 }
