@@ -5,8 +5,8 @@
     <string name="button_continue">Continue</string>
     <string name="description">Description</string>
     <string name="dodaj">Dodaj</string>
-    <string name="l">L</string>
-    <string name="m">M</string>
-    <string name="h">H</string>
+    <string name="l">1</string>
+    <string name="m">2</string>
+    <string name="h">3</string>
     <string name="zapisz_zadanie">Zapisz zadanie</string>
 </resources>

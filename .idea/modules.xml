@@ -2,6 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/ASP2-Android-Studio-Project-Projekt.iml" filepath="$PROJECT_DIR$/ASP2-Android-Studio-Project-Projekt.iml" />
+      <module fileurl="file://$PROJECT_DIR$/app/ASP2-Android-Studio-Project-app.iml" filepath="$PROJECT_DIR$/app/ASP2-Android-Studio-Project-app.iml" />
       <module fileurl="file://$PROJECT_DIR$/Android-Studio-Project-Projekt.iml" filepath="$PROJECT_DIR$/Android-Studio-Project-Projekt.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/Android-Studio-Project-app.iml" filepath="$PROJECT_DIR$/app/Android-Studio-Project-app.iml" />
       <module fileurl="file://$PROJECT_DIR$/Android-Studio-Project2-Projekt.iml" filepath="$PROJECT_DIR$/Android-Studio-Project2-Projekt.iml" />

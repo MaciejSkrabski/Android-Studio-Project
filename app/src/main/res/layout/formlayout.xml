@@ -7,10 +7,10 @@
     tools:context=".MainActivity">
 
     <LinearLayout
-        android:id="@+id/verticalLayout"
+        android:id="@+id/vertical_layout"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
+        android:orientation="vertical"
         app:layout_constraintBottom_toTopOf="@+id/editTextDescription"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -45,14 +45,14 @@
             app:layout_constraintTop_toTopOf="parent">
 
             <RadioButton
-                android:id="@+id/priorityL"
+                android:id="@+id/priority1"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_weight=".3333333"
                 android:text="@string/l" />
 
             <RadioButton
-                android:id="@+id/priorityM"
+                android:id="@+id/priority2"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_weight=".3333333"
@@ -85,7 +85,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/verticalLayout"
+        app:layout_constraintTop_toBottomOf="@+id/vertical_layout"
         app:layout_constraintVertical_bias="0.0"
         tools:text="@tools:sample/lorem/random" />
 

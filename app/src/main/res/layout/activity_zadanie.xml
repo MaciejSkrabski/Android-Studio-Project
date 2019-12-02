@@ -7,22 +7,22 @@
     tools:context=".zadanie">
 
 
-
     <LinearLayout
         android:id="@+id/verticalLayout"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
+        android:layout_height="0dp"
+        android:orientation="vertical"
         app:layout_constraintBottom_toTopOf="@+id/DescriptionView"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
 
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
 
         <TextView
             android:id="@+id/TitleView"
-            android:layout_width="0dp"
+            android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_marginTop="0dp"
             android:layout_weight=".9"
@@ -68,13 +68,10 @@
         </RadioGroup>
     </LinearLayout>
 
-
-
-
     <TextView
         android:id="@+id/DescriptionView"
         android:layout_width="0dp"
-        android:layout_height="0dp"
+        android:layout_height="30dp"
         android:ems="10"
         android:nextFocusLeft="@id/buttonContinue"
         android:nextFocusRight="@id/buttonContinue"
