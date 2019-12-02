@@ -12,8 +12,17 @@ import kotlinx.android.synthetic.main.recycler_view_fragment.*
 
 class RecyclerViewFragment : Fragment()
 {
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
+
+    override fun onCreateView(
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
+        return inflater.inflate(R.layout.recycler_view_fragment, container, false)
+    }
+
+    override fun onActivityCreated(savedInstanceState: Bundle?) {
+        super.onActivityCreated(savedInstanceState)
 
         listaZadan.layoutManager = LinearLayoutManager(this.context) //not sure
 
@@ -24,12 +33,5 @@ class RecyclerViewFragment : Fragment()
 
         val dbHelper = DataBaseHelper(this.context!!) // not sure either
         val db = dbHelper.writableDatabase
-    }
-    override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        return inflater.inflate(R.layout.recycler_view_fragment, container, false)
     }
 }
