@@ -5,11 +5,11 @@ import android.database.sqlite.SQLiteDatabase
 import android.database.sqlite.SQLiteOpenHelper
 import android.os.Parcel
 import android.os.Parcelable
+import android.provider.BaseColumns
 
-//class DBHelper(context: Context): SQLiteOpenHelper(context, DATA_BASE_NAME,null, DATA_BASE_VERSION) {
-object TableInfo
+object TableInfo: BaseColumns
 {
-    const val TABLE_NAME = "nazwa tabeli"
+    const val TABLE_NAME = "Zadania"
     const val TABLE_COLUMN_TITLE = "nazwa zadania"
     const val TABLE_COLUMN_DATE = "data dodania zadania"
     const val TABLE_COLUMN_PRIORITY = "priorytet zadania"
@@ -19,20 +19,22 @@ object TableInfo
 object BasicCommand{
     const val SQL_CREATE_TABLE =
         "CREATE TABLE ${TableInfo.TABLE_NAME} (" +
-                "${TableInfo.TABLE_COLUMN_TITLE} TEXT NOT NULL PRIMARY KEY, " +
-                "${TableInfo.TABLE_COLUMN_DATE} INT NOT NULL," +
-                "${TableInfo.TABLE_COLUMN_PRIORITY} INT NOT NULL," +
-                "${TableInfo.TABLE_COLUMN_STATUS} TEXT NOT NULL"
+                "${BaseColumns._ID} INTEGER PRIMARY KEY, " +
+                "${TableInfo.TABLE_COLUMN_TITLE} TEXT NOT NULL, " +
+                "${TableInfo.TABLE_COLUMN_DATE} INT NOT NULL, " +
+                "${TableInfo.TABLE_COLUMN_PRIORITY} INT NOT NULL, " +
+                "${TableInfo.TABLE_COLUMN_STATUS} TEXT NOT NULL)"
 
     const val SQL_DELETE_TABLE = "DROP TABLE IF EXISTS ${TableInfo.TABLE_NAME}"
 }
 
 class DataBaseHelper(context: Context): SQLiteOpenHelper(context, TableInfo.TABLE_NAME, null, 1) {
     override fun onCreate(db: SQLiteDatabase?) {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+        db?.execSQL(BasicCommand.SQL_CREATE_TABLE)
     }
 
     override fun onUpgrade(db: SQLiteDatabase?, oldVersion: Int, newVersion: Int) {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+        db?.execSQL(BasicCommand.SQL_DELETE_TABLE)
+        //onCreate(db)
     }
 }

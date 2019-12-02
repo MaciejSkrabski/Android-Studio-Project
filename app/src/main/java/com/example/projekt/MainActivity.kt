@@ -23,6 +23,9 @@ class MainActivity : AppCompatActivity() {
 
 
 
+        val dbHelper = DataBaseHelper(applicationContext)
+        val db = dbHelper.writableDatabase
+
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
