@@ -19,7 +19,7 @@ object TableInfo: BaseColumns
 object BasicCommand{
     const val SQL_CREATE_TABLE =
         "CREATE TABLE ${TableInfo.TABLE_NAME} (" +
-                "${BaseColumns._ID} INTEGER AUTOINCREMENT PRIMARY KEY, " +
+                "${BaseColumns._ID} INTEGER PRIMARY KEY AUTOINCREMENT, " +
                 "${TableInfo.TABLE_COLUMN_TITLE} TEXT NOT NULL, " +
                 "${TableInfo.TABLE_COLUMN_DATE} INT NOT NULL, " +
                 "${TableInfo.TABLE_COLUMN_PRIORITY} INT NOT NULL, " +

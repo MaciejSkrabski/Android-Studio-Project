@@ -8,7 +8,10 @@ import androidx.fragment.app.Fragment
 
 class FormLayoutFragment : Fragment()
 {
-    val db = DataBaseHelper(this.context!!)
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        //val db = DataBaseHelper(context)
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater,
