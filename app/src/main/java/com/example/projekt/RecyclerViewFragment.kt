@@ -33,5 +33,6 @@ class RecyclerViewFragment : Fragment()
 
         val dbHelper = DataBaseHelper(this.context!!) // not sure either
         val db = dbHelper.writableDatabase
+
     }
 }

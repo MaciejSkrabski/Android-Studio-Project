@@ -4,13 +4,8 @@ import android.content.ContentValues
 import android.content.Context
 import android.database.sqlite.SQLiteDatabase
 import android.database.sqlite.SQLiteOpenHelper
-import android.os.Parcel
-import android.os.Parcelable
 import android.provider.BaseColumns
-import android.util.EventLog
 import android.widget.Toast
-import androidx.recyclerview.widget.RecyclerView
-import java.time.LocalDate
 
 object TableInfo: BaseColumns
 {
@@ -22,7 +17,7 @@ object TableInfo: BaseColumns
     const val TABLE_COLUMN_DESCRIPTION = "opis zadania"
 }
 
-object BasicCommand{
+object BasicCommand {
     const val SQL_CREATE_TABLE =
         "CREATE TABLE ${TableInfo.TABLE_NAME} (" +
                 "${BaseColumns._ID} INTEGER PRIMARY KEY AUTOINCREMENT, " +
@@ -33,36 +28,12 @@ object BasicCommand{
                 "${TableInfo.TABLE_COLUMN_DESCRIPTION} TEXT NOT NULL)"
 
     const val SQL_DELETE_TABLE = "DROP TABLE IF EXISTS ${TableInfo.TABLE_NAME}"
-
-    const val SQL_INSERT =
-            "INSERT INTO ${TableInfo.TABLE_NAME} (${TableInfo.TABLE_COLUMN_TITLE}, ${TableInfo.TABLE_COLUMN_DATE}, ${TableInfo.TABLE_COLUMN_PRIORITY}, ${TableInfo.TABLE_COLUMN_STATUS}) " +
-            "VALUES( zad1, 02122019, 3, niewykonane);"
-
-    const val SQL_SELECT =
-        "SELECT * from ${TableInfo.TABLE_NAME} where ${TableInfo.TABLE_COLUMN_TITLE} like \"zad1\""
 }
 
-class Event {
-    var id: Int? = null
-    var title: String? = null
-    var prio: Int? = null
-    var date: String? = null
-    var status: String? = null
-    var desc: String? = null
-
-    constructor()
-    constructor(id: Int, title: String, prio: Int,/*status:String,*/desc: String) {
-        this.id = id
-
-        this.title = title
-        this.prio = prio
-        /*  this.status=status*/
-        this.desc = desc
-    }
-}
 
     class DataBaseHelper(context: Context) :
-        SQLiteOpenHelper(context, TableInfo.TABLE_NAME, null, 1) {
+        SQLiteOpenHelper(context, TableInfo.TABLE_NAME, null, 1)
+    {
 
         val context = context
 
@@ -76,16 +47,19 @@ class Event {
             //onCreate(db)
         }
 
-        val List: ArrayList<Event>
-            get() {
+        val List: ArrayList<EventClass>
+            get()
+            {
 
-                val lstEvent = ArrayList<Event>()
+                val lstEvent = ArrayList<EventClass>()
                 val selectQuery = "SELECT * FROM ${TableInfo.TABLE_NAME}"
                 val db = this.writableDatabase
                 val cursor = db.rawQuery(selectQuery, null)
-                if (cursor.moveToFirst()) {
-                    do {
-                        val event = Event()
+                if (cursor.moveToFirst())
+                {
+                    do
+                    {
+                        val event = EventClass()
                         event.id = cursor.getInt(cursor.getColumnIndex(BaseColumns._ID))
                         event.title = cursor.getString(cursor.getColumnIndex(TableInfo.TABLE_NAME))
                         event.prio =
@@ -99,16 +73,19 @@ class Event {
                         lstEvent.add(event)
                     } while (cursor.moveToNext())
                 }
-                return lstEvent
                 db.close()
+                return lstEvent
+
 
             }
 
-        fun saveInfo(context: Context) {
+        fun saveInfo(context: Context)
+        {
             Toast.makeText(context, "pomyslnie dodano wydarzenie ", Toast.LENGTH_SHORT).show()
         }
 
-        fun add_event(event: Event) {
+        fun add_event(event: EventClass)
+        {
 
             val db = writableDatabase
             val values = ContentValues()
@@ -124,12 +101,14 @@ class Event {
 
         }
 
-        fun del_even(id: String) {
+        fun del_even(id: String)
+        {
 
             val db = writableDatabase
 
             db.delete(TableInfo.TABLE_NAME, "${BaseColumns._ID}=?", arrayOf(id))
             Toast.makeText(context, "Pomyślnie usunięto wydarzenie", Toast.LENGTH_SHORT).show()
             db.close()
+        }
     }
-}
+
