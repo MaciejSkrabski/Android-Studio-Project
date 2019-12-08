@@ -29,7 +29,7 @@ object BasicCommand{
                 "${TableInfo.TABLE_COLUMN_TITLE} TEXT NOT NULL, " +
                 "${TableInfo.TABLE_COLUMN_DATE} TEXT NOT NULL, " +
                 "${TableInfo.TABLE_COLUMN_PRIORITY} INT NOT NULL, " +
-                "${TableInfo.TABLE_COLUMN_STATUS} TEXT NOT NULL)" +
+                "${TableInfo.TABLE_COLUMN_STATUS} TEXT NOT NULL, " +
                 "${TableInfo.TABLE_COLUMN_DESCRIPTION} TEXT NOT NULL)"
 
     const val SQL_DELETE_TABLE = "DROP TABLE IF EXISTS ${TableInfo.TABLE_NAME}"

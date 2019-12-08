@@ -20,12 +20,13 @@
 
         <EditText
             android:id="@+id/editTextTitle"
-            android:layout_width="0dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="0dp"
             android:layout_weight=".9"
             android:ems="10"
             android:inputType="textPersonName"
+            android:singleLine="true"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
