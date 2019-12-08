@@ -10,7 +10,10 @@ class FormLayoutFragment : Fragment()
 {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        //val db = DataBaseHelper(context)
+
+        var db = DataBaseHelper(super.getContext()!!)
+
+
     }
 
     override fun onCreateView(
