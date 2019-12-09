@@ -74,7 +74,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:hint="Priorytet" />
+            android:hint="Priorytet"
+            />
 
         <TextView
             android:id="@+id/status"
@@ -82,8 +83,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:hint="Status"
-            android:textColor="@color/cardview_dark_background"
-            android:textStyle="bold"></TextView>
+            />
 
         <TextView
             android:id="@+id/dateev"
@@ -91,8 +91,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:hint="Data"
-            android:textColor="@color/cardview_dark_background"
-            android:textStyle="bold"></TextView>
+            />
 
     </LinearLayout>
 
@@ -106,7 +105,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:textColor="@color/cardview_dark_background"
-            android:text="Data dodania:"></TextView>
+            android:text="Data:"/>
 
         <TextView
             android:id="@+id/data"
@@ -114,27 +113,6 @@
             android:layout_height="wrap_content"
             android:layout_weight="0.5"
             android:hint="Data dodania"
-            android:textStyle="bold"
-            android:textColor="@color/cardview_dark_background"
-            ></TextView>
+            />
     </LinearLayout>
-    <!-- <LinearLayout
-        android:orientation="horizontal"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
-        <Button
-            android:id="@+id/BTN_EDYT"
-            android:layout_weight="1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Edytuj "/>
-        <Button
-            android:id="@+id/BTN_INFO"
-            android:layout_weight="1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Wyświetl "/>
-    </LinearLayout>
--->
 </LinearLayout>
