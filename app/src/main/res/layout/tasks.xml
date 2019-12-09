@@ -46,7 +46,7 @@
             android:layout_weight="1"
 
             android:text="Priorytet:"
-            android:textColor="@color/cardview_dark_background"></TextView>
+            />
 
         <TextView
             android:layout_width="match_parent"
@@ -54,14 +54,14 @@
             android:layout_weight="1"
 
             android:text="Status:"
-            android:textColor="@color/cardview_dark_background"></TextView>
+            />
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Data wydarzenia:"
-            android:textColor="@color/cardview_dark_background"></TextView>
+            android:text="Zaplanowano na:"
+            />
     </LinearLayout>
 
     <LinearLayout
@@ -74,9 +74,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:hint="Priorytet"
-            android:textColor="@color/cardview_dark_background"
-            android:textStyle="bold"></TextView>
+            android:hint="Priorytet" />
 
         <TextView
             android:id="@+id/status"
