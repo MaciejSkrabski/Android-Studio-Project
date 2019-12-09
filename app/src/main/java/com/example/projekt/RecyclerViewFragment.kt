@@ -1,6 +1,5 @@
 package com.example.projekt
 
-import android.app.Application
 import android.content.Context
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -8,11 +7,16 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import kotlinx.android.synthetic.main.recycler_view_fragment.*
+
 
 class RecyclerViewFragment : Fragment()
 {
+    //
 
+
+    internal var llstEvent:List<EventClass> = ArrayList<EventClass>()
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -28,11 +32,36 @@ class RecyclerViewFragment : Fragment()
 
         //połączenie między bazą danych a widokiem
         listaZadan.adapter = Adapter()
+        val ac = (activity as MainActivity)
+        ac.db = DataBaseHelper(context!!)
+        //var db = ac.db
+
+        refreshdata(context!!, ac.db)
 
 
+    }
 
-        val dbHelper = DataBaseHelper(this.context!!) // not sure either
-        val db = dbHelper.writableDatabase
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        listaZadan.layoutManager = LinearLayoutManager(this.context) //not sure
 
+        //połączenie między bazą danych a widokiem
+        listaZadan.adapter = Adapter()
+
+        val ac = (activity as MainActivity)
+        ac.db = DataBaseHelper(context!!)
+
+        //val dbHelper = DataBaseHelper(this.context!!) // not sure either
+        //val db = dbHelper.writableDatabase
+
+        refreshdata(context!!, ac.db)
+    }
+
+
+    fun refreshdata(context: Context, db: DataBaseHelper){
+        llstEvent=db.List
+        listaZadan.layoutManager=LinearLayoutManager(context, RecyclerView.VERTICAL,false)
+        val adapter =Adapter()
+        listaZadan.adapter = adapter
     }
 }
