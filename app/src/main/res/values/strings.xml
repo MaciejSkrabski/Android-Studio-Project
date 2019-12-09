@@ -1,4 +1,4 @@
 <resources>
-    <string name="app_name">Projekt</string>
+    <string name="app_name">Lista Zadan</string>
     <string name="title_activity_add_event">AddEvent</string>
 </resources>

@@ -17,7 +17,7 @@
             android:id="@+id/idHolder"
             android:layout_width="0dp"
             android:layout_height="0dp"
-            android:hint="Id"></TextView>
+            android:hint="Id"/>
 
         <TextView
 
@@ -25,11 +25,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="0.5"
-            android:background="@drawable/back"
             android:hint="Tytuł"
-            android:textColor="@color/cardview_dark_background"
-            android:textSize="24dp"
-            android:textStyle="bold"></TextView>
+            android:textStyle="bold"/>
 
         <Button
             android:id="@+id/BTN_DEL"
