@@ -36,7 +36,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
 
-        openFragment(RecyclerViewFragment())
+        openFragment(RecyclerViewFragment(this))
 
         //fragmentTransaction.add(R.id.vertical_layout, fragment)
     }

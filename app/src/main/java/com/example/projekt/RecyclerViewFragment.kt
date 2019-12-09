@@ -11,10 +11,9 @@ import androidx.recyclerview.widget.RecyclerView
 import kotlinx.android.synthetic.main.recycler_view_fragment.*
 
 
-class RecyclerViewFragment : Fragment()
+class RecyclerViewFragment(context: Context) : Fragment()
 {
-    //
-
+    val con = context
 
     internal var llstEvent:List<EventClass> = ArrayList<EventClass>()
     override fun onCreateView(
@@ -28,12 +27,12 @@ class RecyclerViewFragment : Fragment()
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
 
-        listaZadan.layoutManager = LinearLayoutManager(this.context) //not sure
+        listaZadan.layoutManager = LinearLayoutManager(context) //not sure
 
         //połączenie między bazą danych a widokiem
         listaZadan.adapter = Adapter()
         val ac = (activity as MainActivity)
-        ac.db = DataBaseHelper(context!!)
+        ac.db = DataBaseHelper(ac)
         //var db = ac.db
 
         refreshdata(context!!, ac.db)
